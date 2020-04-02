@@ -1,0 +1,90 @@
+@import 'settings';
+
+// Button Colors
+$button-primary--background: $purple-300;
+$button-primary--background__hover: $purple-400;
+$button-primary--background__disabled: #8DA5D5; //this hex should be added to the color system and not used as a hex here
+$button-primary--border__focus: $purple-200;
+
+$button-secondary--background: $white;
+$button-secondary--background__hover: $white;
+$button-secondary--background__disabled: $white;
+
+$button-text--white: $white;
+$button-text--dark: $purple-300;
+$button-text--dark__hover: $purple-400;
+$button-text--dark__focus: $purple-400;
+$button-text--dark__disabled: $purple-400;
+
+.button {
+  display: flex;
+  flex-direction: row;
+  padding: 0px $grid-unit * 2;
+  margin: $grid-unit;
+  align-items: center;
+  text-align: center; 
+
+  min-width: $grid-unit * 2;
+  height: $grid-unit * 4;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+  border-radius: $grid-unit - 2;
+
+  color: $button-text--white;
+  cursor: pointer;
+
+  // These font things could be moved to a typography file
+  font-style: normal;
+  font-weight: 600;
+  
+  // these should be part of the base 8...
+  font-size: 14px;
+  line-height: 20px;
+
+  &--primary {
+    background-color: $button-primary--background;
+  }
+  
+  &--primary:hover {
+    background-color: $button-primary--background__hover;
+  }
+
+  &--primary:focus {
+    border: 2px solid $button-primary--border__focus;
+  }
+  
+  &--primary__disabled,
+  &--primary__disabled:hover,
+  &--primary__disabled:focus {
+    background-color: $button-primary--background__disabled;
+    cursor: default;
+  }
+  
+  &--secondary {
+    background-color: $button-secondary--background;
+    color: $button-text--dark;
+  }
+  
+  // ---------------
+  // This section is still WIP
+  &--secondary:hover {
+    background-color: $button-secondary--background__hover;
+  }
+  
+  &--secondary--disabled,
+  &--secondary--disabled:hover,
+  &--secondary--disabled:focus {
+    background-color: $button-secondary--background__disabled;
+    cursor: default;
+  }
+
+  // text button
+  &--text {
+    border: none;
+    background-color: $white;
+    color: $button-text--dark;
+    box-shadow: none;
+  }
+  // ------------------
+}
+
